@@ -27,7 +27,7 @@ function Signup() {
             return handleError('name, email and password are required')
         }
         try {
-            const url = "full-stack-app-beryl.vercel.app";
+            const url = "https://full-stack-app-beryl.vercel.app/";
             
             const response = await fetch(url, {
                 method: "POST",
