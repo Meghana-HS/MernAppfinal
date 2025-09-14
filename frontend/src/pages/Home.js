@@ -28,7 +28,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:8080/products', {
+            const response = await fetch('https://full-stack-app-beryl.vercel.app/', {
                 headers: { 'Authorization': localStorage.getItem('token') }
             });
             const result = await response.json();
