@@ -28,7 +28,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('https://mern-appfinal.vercel.app//products', {
+            const response = await fetch('https://mern-appfinal-6mv9.vercel.app/products', {
                 headers: { 'Authorization': localStorage.getItem('token') }
             });
             const result = await response.json();
