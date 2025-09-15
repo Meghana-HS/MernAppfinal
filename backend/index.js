@@ -17,20 +17,26 @@ app.use(bodyParser.json());
 const allowedOrigins = ["http://localhost:3000", "http://localhost:3006"];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
+    origin: 'https://mern-appfinal-i1as.vercel.app', // frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // if using cookies or authentication headers
 }));
 
-app.use('/auth', AuthRouter);
+
+app.use(express.json());
+
+// your routes
+app.use('/auth', require('./routes/auth'));
+
+
+
+
+
+
+// app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`)
+app.listen(process.env.PORT || 8080, () => {
+    console.log('Server running...');
 })
