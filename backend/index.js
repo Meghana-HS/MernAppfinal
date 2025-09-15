@@ -14,7 +14,7 @@ app.get('/ping', (req, res) => {
 });
 
 app.use(bodyParser.json());
-const allowedOrigins = ["http://localhost:3003", "http://localhost:3006"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3006"];
 
 app.use(cors({
   origin: function (origin, callback) {
